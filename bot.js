@@ -39,6 +39,12 @@ async function handleImage(ctx, fileId) {
       [Markup.button.callback('🔳 Центр', 'crop_1110x398_center')],
     ]));
 
+    await ctx.reply('Выберите способ обрезки для 900x600:', Markup.inlineKeyboard([
+      [Markup.button.callback('🔼 Верх', 'crop_900x600_north')],
+      [Markup.button.callback('🔽 Низ', 'crop_900x600_south')],
+      [Markup.button.callback('🔳 Центр', 'crop_900x600_center')],
+    ]));
+
     await ctx.reply('Выберите способ обрезки для 345x250:', Markup.inlineKeyboard([
       [Markup.button.callback('🔼 Верх', 'crop_345x250_north')],
       [Markup.button.callback('🔽 Низ', 'crop_345x250_south')],
