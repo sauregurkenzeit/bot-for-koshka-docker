@@ -1,7 +1,17 @@
 version: '3.8'
 
 services:
-  telegram-bot:
+  bot-for-koshka:
     build: .
-    env_file: .env
-    restart: unless-stopped
+    container_name: bot-for-koshka
+    env_file: .env        # Ensure you have a .env file with your bot's token
+    restart: unless-stopped  # Ensures the container restarts if it crashes or the system reboots
+    volumes:
+      - .:/usr/src/app     # Mounts the current directory into the container, for live updates
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
+
