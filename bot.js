@@ -148,3 +148,7 @@ bot.action(/^crop_(\d+x\d+)_(north|center|south)$/, async (ctx) => {
 bot.launch();
 console.log('Бот запущен!');
 
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => res.send('Bot is running'));
+app.listen(process.env.PORT || 3000);
